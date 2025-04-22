@@ -9,12 +9,12 @@ import java.util.Optional;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-    
-    List<Book> findByAuthorContainingIgnoreCase(String author);
-    
-    List<Book> findByTitleContainingIgnoreCase(String title);
-    
+
     Optional<Book> findByIsbn(String isbn);
-    
+
+    List<Book> findByTitleContainingIgnoreCase(String title);
+
+    List<Book> findByAuthorContainingIgnoreCase(String author);
+
     boolean existsByIsbn(String isbn);
 }
